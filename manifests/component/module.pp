@@ -18,7 +18,6 @@ define rsyslog::component::module (
   rsyslog::generate_concat { "rsyslog::concat::module::${name}":
     confdir => $confdir,
     target  => $target,
-    before  => Concat::Fragment["rsyslog::component::module::${name}"],
   }
 
   concat::fragment {"rsyslog::component::module::${name}":
