@@ -15,7 +15,7 @@ define rsyslog::component::custom_config (
   rsyslog::generate_concat { "rsyslog::concat::custom_config::${name}":
     confdir => $confdir,
     target  => $target,
-    before  => Concat::Fragment["rsyslog::component::custom_config::${name}"],
+   # before  => Concat::Fragment["rsyslog::component::custom_config::${name}"],
   }
 
   concat::fragment { "rsyslog::component::custom_config::${name}":
